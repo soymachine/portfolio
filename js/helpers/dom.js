@@ -8,7 +8,7 @@ DOM.getElementID = (id)=>{
     return "#" + id
 }
 
-DOM.positon = (id, left, top)=>{
+DOM.translate = (id, left, top)=>{
     anime({
         targets: DOM.getElementID(id),
         translateX: DOM.px(left),
@@ -16,6 +16,17 @@ DOM.positon = (id, left, top)=>{
         duration: 0.001
     });
 }
+
+DOM.position = (id, left, top)=>{
+    anime({
+        targets: DOM.getElementID(id),
+        left: DOM.px(left),
+        top: DOM.px(top),
+        duration: 0.001
+    });
+}
+
+
 
 DOM.anime = (id, left, top, duration, ease, fn) =>{
     anime({

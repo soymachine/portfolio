@@ -13,7 +13,7 @@ class Background {
         // Tiempo de duración de las animaciones
         this.duration = Settings.background_duration 
 
-        DOM.positon(this.id, this.top, this.left)
+        DOM.translate(this.id, this.top, this.left)
 
         const events = GlobalEvents.getInstance()
         events.subscribe(GlobalEvents.ON_NODE_CHANGE, this.onChange);

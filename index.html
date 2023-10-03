@@ -25,81 +25,99 @@
         <div id="background"></div>
 
         <!-- DOORS -->
-        <div id="top_door" class="full-width-div door"></div>
-        <div id="bottom_door" class="full-width-div door"></div>
+        <div id="door_one" class="full-width-div door"></div>
+        <div id="door_two" class="full-width-div door"></div>
 
-        <!-- PRESENTACIÓN -->
-        <div id="presentation-1" class="full-width-div">
-            <div class="test">Presentación de la colección</div>
-            <div class="test">Slide 1</div>
-            <div class="test">
-                <button id="presentation-1-button">Siguiente slide</button>
+        <!-- ********** -->
+        <!-- CONTENIDO -->
+        <!-- ********** -->
+
+        <!-- INICIO -->
+        <div id="home" class="" style="--gap:6em;">
+            <div id="tech-col">
+                <div class="timeline-line"></div>
+                <button id="tech-button"><h3>TECH</h3></button>
+            </div>
+            <div id="content-col">
+                <div class="ff-sans-cond fs-500">Hello, I'm</div>
+                <div class="ff-serif fs-800">Dani Moya</div>
+                <img src="./assets/imgs/dani.png" />
+                <div class="ff-sans-normal fs-600">FULLSTACK DEVELOPER</div>
+                <button id="bio-button" style="margin-top:6em;"><h3>BIO</h3></button>
+            </div>
+            <div id="timeline-col" class="">
+                <button id="timeline-button" ><h3>TIMELINE</h3></button>
+                <div class="timeline-line">
+                    
+                </div>
             </div>
         </div>
-        <div id="presentation-2" class="full-width-div">
+
+        <!-- TECH -->
+        <div id="tech" class="full-width-div">
             <div>
-                <button id="presentation-2-back-button">Slide anterior</button>
+                <button id="tech-back-button">Back HOME</button>
             </div>
-            <div>Presentación de la colección</div>
-            <div>Slide 2</div>
+            <div class="ff-serif fs-800">TECH</div>
+            <div>Hablar aquí de los conocimientos técnicos</div>
+            
+        </div>
+
+        <!-- TIMELINE -->
+        <div id="timeline" class="full-width-div">
+            <button id="timeline-back-button">Back HOME</button>
+            <div id="timeline-content">
+                <div class="timeline-line">
+                    <a href="#" id="tlb-2003"><div id="tl-2003" class="timeline-point dot"></div></a>
+                    <div id="item-2003" class="timeline-item">
+                        <div class="ff-serif">2003</div>
+                        <div class="ff-sans-cond">Whads/Accent</div>
+                    </div>
+
+                    <a href="#" id="tlb-2005"><div id="tl-2005" class="timeline-point dot"></div></a>
+                    <div id="item-2005" class="timeline-item timeline-position-top">
+                        <div class="ff-serif">2005</div>
+                        <div class="ff-sans-cond">identitat</div>
+                    </div>
+
+                    <a href="#" id="tlb-2009"><div id="tl-2009" class="timeline-point dot"></div></a>
+                    <div id="item-2009" class="timeline-item">
+                        <div class="ff-serif">2009</div>
+                        <div class="ff-sans-cond">king-e-client</div>
+                    </div>
+
+                    <a href="#" id="tlb-2010"><div id="tl-2010" class="timeline-point dot"></div></a>
+                    <div id="item-2010" class="timeline-item timeline-position-top">
+                        <div class="ff-serif">2010</div>
+                        <div class="ff-sans-cond">LBi/Digitas</div>
+                    </div>
+                    
+                    <a href="#" id="tlb-2012"><div id="tl-2012" class="timeline-point dot"></div></a>
+                    <div id="item-2012" class="timeline-item">
+                        <div class="ff-serif">2012</div>
+                        <div class="ff-sans-cond">Appnormals</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BIO -->
+        <div id="bio" class="full-width-div flow">
             <div>
-                <button id="presentation-2-button">Preguntas</button>
+                <button id="bio-back-button">Back HOME</button>
             </div>
-        </div>
-        <!-- PRIMERA PREGUNTA -->
-        <div id="question-1" class="full-width-div">
-            <div><button id="question-1-back-button">Back</button></div>
-            <div>Preferencias?</div>
-            <div>
-                
-                <button id="question-1-ligero-button">Ligero</button>
-                <button id="question-1-opulente-button">Opulente</button>
+            <div class="bio-content flow">
+                <p>So I suppose I will have to start by mentioning that I was <span>born in 1979.</span> That's only relevant to determine to my age, I suppose</p>
+                <p>So let's go to the meaty parts:</p>
+                <p><span>I started coding in 2002</span>. But that time I finish my business bachelor, but the internet and the world wide web was a strong force that pull me into learning Flash and Actionscript.</p>
+                <p><span>In 2003 I got my first job</span> as a "flash developer" at <a class="external-link" href="hhttp://www.whads.com">whads/accent</a> mainly doing interactive websites and mini-games.</p>
+                <p>By late 2005, a coworker and I <span>started our own company</span> <a class="external-link" href="www.identitt.com">identitat</a> where we work for 4 years doing all kinds of solutions. My main role was again flash developer doing interactive sites, promotional websites and minigames.</p>
+                <p>In 2009, we <span>joined forces</span> with <a class="external-link" href="https://kingeclient.com/">king-e-client</a> adding our company know-how, expertise, clients to a bigger team.</p>
+                <p>By 2010, I lived in Sweden for a year and a half <span>and worked there at</span> <a class="external-link" href="https://www.digitas.com/">Digitas LBi Sweeden</a> as a creative developer.</p>
             </div>
+            
         </div>
-
-        <!-- LIGERO - SEGUNDA PREGUNTA -->
-        <div id="ligero" class="full-width-div">
-            <div>
-                <button id="ligero-back-button">Back</button>
-            </div>
-            <div>Ligero</div>
-            <button id="ligero-delicadeza-button">Delicadeza</button>
-            <button id="ligero-dinamismo-button">Dinamismo</button>
-        </div>
-
-        <!-- Opulente - SEGUNDA PREGUNTA -->
-        <div id="opulente" class="full-width-div">
-            <div>
-                <button id="opulente-back-button">Back</button>
-            </div>
-            <div>Opulente</div>
-            <button id="opulente-resplandor-button">Resplandor</button>
-            <button id="opulente-misterio-button">Misterio</button>
-        </div>
-
-        <!-- Delicadeza - PAGINA FINAL -->
-        <div id="delicadeza" class="full-width-div">
-            <button id="delicadeza-back-button">Back</button>            
-            <div>Delicadeza</div>
-        </div>
-
-        <!-- Dinamismo - PAGINA FINAL -->
-        <div id="dinamismo" class="full-width-div">
-            <button id="dinamismo-back-button">Back</button>            
-            <div>Dinamismo</div>
-        </div>
-
-        <!-- Resplandor - PAGINA FINAL -->
-        <div id="resplandor" class="full-width-div">
-            <button id="resplandor-back-button">Back</button>            
-            <div>Resplandor</div>
-        </div>
-
-        <!-- Misterio - PAGINA FINAL -->
-        <div id="misterio" class="full-width-div">
-            <button id="misterio-back-button">Back</button>            
-            <div>Misterio</div>
-        </div>
+        
         
     </div>
 </body>

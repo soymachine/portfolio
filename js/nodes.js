@@ -30,34 +30,20 @@ class Nodes {
         this.currentNodeID = undefined
 
         // Aquí vamos a crear la estructura de nodos
-        this.addNode("presentation-1", Node.RIGHT)
-        this.addNode("presentation-2", Node.RIGHT)
-        this.addNode("question-1", Node.BOTTOM)
-        this.addNode("ligero", Node.LEFT)
-        this.addNode("opulente", Node.RIGHT)
-        this.addNode("delicadeza", Node.BOTTOM)
-        this.addNode("dinamismo", Node.BOTTOM)
-        this.addNode("resplandor", Node.BOTTOM)
-        this.addNode("misterio", Node.BOTTOM)
+        this.addNode("home", Node.BOTTOM)
+        this.addNode("tech", Node.LEFT)
+        this.addNode("timeline", Node.RIGHT)
+        this.addNode("bio", Node.BOTTOM)
         
         this.setupNodes()
 
-        this.addButton("presentation-1-button", "presentation-2")
-        this.addButton("presentation-2-button", "question-1")
-        this.addButton("presentation-2-back-button", "presentation-1")
-        this.addButton("question-1-back-button", "presentation-2")
-        this.addButton("question-1-ligero-button", "ligero")
-        this.addButton("question-1-opulente-button", "opulente")
-        this.addButton("ligero-back-button", "question-1")
-        this.addButton("ligero-delicadeza-button", "delicadeza")
-        this.addButton("ligero-dinamismo-button", "dinamismo")
-        this.addButton("opulente-back-button", "question-1")
-        this.addButton("opulente-resplandor-button", "resplandor")
-        this.addButton("opulente-misterio-button", "misterio")
-        this.addButton("delicadeza-back-button", "ligero")
-        this.addButton("dinamismo-back-button", "ligero")
-        this.addButton("resplandor-back-button", "opulente")
-        this.addButton("misterio-back-button", "opulente")
+        this.addButton("tech-button", "tech")
+        this.addButton("timeline-button", "timeline")
+        this.addButton("timeline-back-button", "home")
+        this.addButton("tech-back-button", "home")
+        this.addButton("bio-button", "bio")
+        this.addButton("bio-back-button", "home")
+        
 
         // EVENTOS
         this.events.subscribe(GlobalEvents.ON_DOORS_OPENED, this.onDoorsOpened);
@@ -65,14 +51,14 @@ class Nodes {
     }
 
     onDoorsOpened = ()=>{
-        this.gotoNode("presentation-1")
+        this.gotoNode("home")
     }
 
     onDoorsStartOpening = ()=>{
         // Llamar a lo de abajo con un delay
         
         setTimeout(()=>{
-            this.gotoNode("presentation-1")
+            this.gotoNode("home")
         }, 500)
     }
 
@@ -103,7 +89,7 @@ class Nodes {
 
             //console.log(`this.W:${this.W} offset:${nodeOffset} position:${position} nodoID:${nodoID}`)
             // Posicionamos el nodo
-            DOM.positon(nodoID, left, top)
+            DOM.translate(nodoID, left, top)
 
             // Si los margenes son distintos de 0, agregamos margenes
             if(this.margin > 0){

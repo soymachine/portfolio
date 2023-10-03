@@ -91,20 +91,121 @@ p {
     border:1px solid red;
 }
 
+/* typography */
+
+.ff-serif { font-family: var(--ff-serif); } 
+.ff-sans-cond { font-family: var(--ff-sans-cond); } 
+.ff-sans-normal { font-family: var(--ff-sans-normal); } 
+
+.letter-spacing-1 { letter-spacing: 4.75px; } 
+.letter-spacing-2 { letter-spacing: 2.7px; } 
+.letter-spacing-3 { letter-spacing: 2.35px; } 
+
+.uppercase { text-transform: uppercase; }
+
+.fs-900 { font-size: var(--fs-900); }
+.fs-800 { font-size: var(--fs-800); }
+.fs-700 { font-size: var(--fs-700); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-400 { font-size: var(--fs-400); }
+.fs-300 { font-size: var(--fs-300); }
+.fs-200 { font-size: var(--fs-200); }
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+    line-height: 1.1;
+}
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+/* general */
+
+.external-link {
+    color:white;
+    text-decoration: underline;
+}
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+
+.d-block {
+    display: block;
+}
+
+.flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-space, 1rem);
+}
+
+.container {
+    margin-inline: auto;
+    max-width: 80rem;
+}
+
+.sr-only {
+  position: absolute; 
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px; 
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+.skip-to-content {
+    position: absolute;
+    z-index: 9999;
+    background: hsl( var(--clr-white) );
+    color: hsl( var(--clr-dark) ); 
+    padding: .5em 1em;
+    margin-inline: auto;
+    transform: translateY(-100%);
+    transition: transform 250ms ease-in;
+}
+
+.skip-to-content:focus {
+    transform: translateY(0);
+}
+
+/* colors */
+
+.bg-dark { background-color: hsl( var(--clr-dark) );}
+.bg-accent { background-color: hsl( var(--clr-light) );}
+.bg-white { background-color: hsl( var(--clr-white) );}
+
+.text-dark { color: hsl( var(--clr-dark) );}
+.text-accent { color: hsl( var(--clr-light) );}
+.text-white { color: hsl( var(--clr-white) );}
+
 /* SLIDES */
 button {
     padding:20px 30px;
     border-radius: 2em;
     border:none;
     background-color:#5733ff;
+    cursor: pointer;
+    color: hsl( var(--clr-dark) ); 
 }
 
 #background {
     position: absolute;
     top:0;
     left:0;
-    width: 5824px;
-    height: 3264px;
+    width: 7001px;
+    height: 4001px;
     background-image: url("../assets/imgs/background.jpg");
     background-repeat: no-repeat;
 }
@@ -132,30 +233,93 @@ button {
     align-items: center;
     font-size: 2rem;
     /*transition: transform 1.0s ease-in-out;*/
-    background-color: hsl( var(--clr-white) / .2 );
+    /*background-color: hsl( var(--clr-white) / .2 );*/
 }
 
-/** PRESENTACION 1 **/
-#presentation-1{
-    border:2px solid red;
+/** HOME **/
+#home{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    text-align: center;
+    grid-template-columns: auto 500px auto;
+    align-items: stretch;
+}
+
+#tech-col {
+    align-self: center;
+    display: grid;
+    grid-template-columns: auto 150px;
+}
+
+#content-col {
+    align-self: center;
+    justify-self: center;
+}
+
+#timeline-col{
+    align-self: center;
+    display: grid;
+    grid-template-columns: 150px auto;
+}
+
+.timeline-line {
+    border:1px solid white;
+    margin: auto 0px;
+}
+
+
+/** BIO **/
+.bio-content{
+    max-width: 700px;
+    font-size: var(--fs-500);
+    --flow-space:1em;
+}
+
+.bio-content span{
+    font-weight: 600;
     
 }
 
-/** PRESENTACION 2 **/
-#presentation-2{
-    border:2px solid green;
+/** TIMELINE **/
+#timeline {
+    display: grid;
+    text-align: center;
+    align-items: stretch;
+    grid-template-columns: 100vw;
 }
 
-/** QUESTION 1 **/
-#question-1 {
-    border:2px solid #5733ff;
+#timeline-content {
+    display: grid;
+    text-align: center;
+    align-items: stretch;
 }
 
-/*** LIGERO ***/
-#ligero {
-    border:2px solid #33ffff;
+#timeline-back-button{
+    position: absolute;
+    top: var(--margin-back-space, 1rem);
+    left: var(--margin-back-space, 1rem);
+    width: 150px;
+    height: 58px;
 }
 
-#opulente {
-    border:2px solid #cbbf11;
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: inline-block;
 }
+
+.timeline-item {
+    position:absolute;
+    font-size: var(--fs-500);
+    font-family: var(--ff-serif);
+    text-align: left;
+}
+
+.timeline-point{
+    position:absolute;
+}
+
