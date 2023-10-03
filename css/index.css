@@ -1,0 +1,161 @@
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+
+:root {
+    /* colors */
+    --clr-dark: 230 35% 7%;
+    --clr-light: 231 77% 90%;
+    --clr-white: 0 0% 100%;
+    
+    /* font-sizes */
+    --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+    --fs-800: 3.5rem;
+    --fs-700: 1.5rem;
+    --fs-600: 1rem;
+    --fs-500: 1.75rem;
+    --fs-400: 0.9375rem;
+    --fs-300: 1rem;
+    --fs-200: 0.875rem;
+    
+    /* font-families */
+    --ff-serif: "Bellefair", serif;
+    --ff-sans-cond: "Barlow Condensed", sans-serif;
+    --ff-sans-normal: "Barlow", sans-serif;
+
+    padding: 0;
+    overflow: hidden;
+    color: hsl( var(--clr-white) ); 
+}
+
+@media (min-width: 35em) {
+    :root {
+        --fs-800: 5rem;
+        --fs-700: 2.5rem;
+        --fs-600: 1.5rem;
+        --fs-400: 1rem;
+    }
+}
+
+@media (min-width: 45em) {
+    :root {
+        /* font-sizes */
+        --fs-800: 6.25rem;
+        --fs-700: 3.5rem;
+        --fs-600: 2rem;
+        --fs-400: 1.125rem;
+    }
+}
+
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0; 
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+
+/* ------------------- */
+/* Compontents         */
+/* ------------------- */
+.test {
+    border:1px solid red;
+}
+
+/* SLIDES */
+button {
+    padding:20px 30px;
+    border-radius: 2em;
+    border:none;
+    background-color:#5733ff;
+}
+
+#background {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 5824px;
+    height: 3264px;
+    background-image: url("../assets/imgs/background.jpg");
+    background-repeat: no-repeat;
+}
+
+.container {
+    position: absolute;
+    top:0px;
+    left:0px;
+    display: none;
+}
+
+.door {
+    background-color: hsl( var(--clr-dark)) !important;
+    z-index: 1000;
+    transform: translateY(0);
+}
+
+.full-width-div {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-size: 2rem;
+    /*transition: transform 1.0s ease-in-out;*/
+    background-color: hsl( var(--clr-white) / .2 );
+}
+
+/** PRESENTACION 1 **/
+#presentation-1{
+    border:2px solid red;
+    
+}
+
+/** PRESENTACION 2 **/
+#presentation-2{
+    border:2px solid green;
+}
+
+/** QUESTION 1 **/
+#question-1 {
+    border:2px solid #5733ff;
+}
+
+/*** LIGERO ***/
+#ligero {
+    border:2px solid #33ffff;
+}
+
+#opulente {
+    border:2px solid #cbbf11;
+}

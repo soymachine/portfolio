@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">-->
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+      rel="stylesheet">
+      
+  <!-- Our custom CSS -->
+  <link rel="stylesheet" href="css/index.css">
+  <title>Slides Test</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>  
+  <script src="./js/lib/anime.min.js"></script>
+  <script src="./js/lib/fps.min.js"></script>
+  <script type="module" src="./js/index.js" defer></script>
+</head>
+<body class="home">
+    <div class="container">
+        <!-- BACKGROUND -->
+        <div id="background"></div>
+
+        <!-- DOORS -->
+        <div id="top_door" class="full-width-div door"></div>
+        <div id="bottom_door" class="full-width-div door"></div>
+
+        <!-- PRESENTACIÓN -->
+        <div id="presentation-1" class="full-width-div">
+            <div class="test">Presentación de la colección</div>
+            <div class="test">Slide 1</div>
+            <div class="test">
+                <button id="presentation-1-button">Siguiente slide</button>
+            </div>
+        </div>
+        <div id="presentation-2" class="full-width-div">
+            <div>
+                <button id="presentation-2-back-button">Slide anterior</button>
+            </div>
+            <div>Presentación de la colección</div>
+            <div>Slide 2</div>
+            <div>
+                <button id="presentation-2-button">Preguntas</button>
+            </div>
+        </div>
+        <!-- PRIMERA PREGUNTA -->
+        <div id="question-1" class="full-width-div">
+            <div><button id="question-1-back-button">Back</button></div>
+            <div>Preferencias?</div>
+            <div>
+                
+                <button id="question-1-ligero-button">Ligero</button>
+                <button id="question-1-opulente-button">Opulente</button>
+            </div>
+        </div>
+
+        <!-- LIGERO - SEGUNDA PREGUNTA -->
+        <div id="ligero" class="full-width-div">
+            <div>
+                <button id="ligero-back-button">Back</button>
+            </div>
+            <div>Ligero</div>
+            <button id="ligero-delicadeza-button">Delicadeza</button>
+            <button id="ligero-dinamismo-button">Dinamismo</button>
+        </div>
+
+        <!-- Opulente - SEGUNDA PREGUNTA -->
+        <div id="opulente" class="full-width-div">
+            <div>
+                <button id="opulente-back-button">Back</button>
+            </div>
+            <div>Opulente</div>
+            <button id="opulente-resplandor-button">Resplandor</button>
+            <button id="opulente-misterio-button">Misterio</button>
+        </div>
+
+        <!-- Delicadeza - PAGINA FINAL -->
+        <div id="delicadeza" class="full-width-div">
+            <button id="delicadeza-back-button">Back</button>            
+            <div>Delicadeza</div>
+        </div>
+
+        <!-- Dinamismo - PAGINA FINAL -->
+        <div id="dinamismo" class="full-width-div">
+            <button id="dinamismo-back-button">Back</button>            
+            <div>Dinamismo</div>
+        </div>
+
+        <!-- Resplandor - PAGINA FINAL -->
+        <div id="resplandor" class="full-width-div">
+            <button id="resplandor-back-button">Back</button>            
+            <div>Resplandor</div>
+        </div>
+
+        <!-- Misterio - PAGINA FINAL -->
+        <div id="misterio" class="full-width-div">
+            <button id="misterio-back-button">Back</button>            
+            <div>Misterio</div>
+        </div>
+        
+    </div>
+</body>
+</html>
