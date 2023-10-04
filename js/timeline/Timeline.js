@@ -7,13 +7,14 @@ import Screen from '../helpers/screen.js';
 class Timeline {
     constructor() {
 
-        const minSpan = 100
+        const minSpan = 200
         this.min = minSpan
         this.max = Screen.W - minSpan
-        this.minYear = 2002
+        this.minYear = 2003
         this.maxYear = 2023
+        this.totalArea = Screen.W - (minSpan * 2)
         this.totalYears = this.maxYear - this.minYear
-        this.spanByYear = (this.max - this.min)/ (this.totalYears)
+        this.spanByYear = this.totalArea / this.totalYears
         
         setTimeout(()=>{
             const that = this
@@ -25,6 +26,7 @@ class Timeline {
                 const year = Math.floor(id.split("-")[1])
                 
                 let x = ((year - that.minYear) * that.spanByYear) + that.min
+                x -= ($(this).width() * .5)
                 
                 // console.log(`x:${x} id: ${id} year:${year} (year - this.minYear):${(year - that.minYear)}`)
                 DOM.position(this.id, x, y)

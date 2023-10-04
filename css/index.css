@@ -272,9 +272,22 @@ button {
 
 /** BIO **/
 .bio-content{
+    position:absolute;
+    top:150px;
+    left:900px;
     max-width: 700px;
     font-size: var(--fs-500);
     --flow-space:1em;
+    overflow: hidden;
+    max-height: 100vw;
+    height: 100vw;
+
+}
+
+#bio-back-button {
+    position:absolute;
+    top:50px;
+    left:1200px;
 }
 
 .bio-content span{
