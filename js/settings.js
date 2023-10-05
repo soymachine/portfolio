@@ -50,7 +50,7 @@ Settings.custom_offsets = {
 };
 
 // Enable/Disable de los FPS
-Settings.isFPSEnabled = false;
+Settings.isFPSEnabled = true;
 
 
 
