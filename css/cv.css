@@ -1,0 +1,232 @@
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+
+:root {
+    /* colors */
+    --clr-dark: 230 35% 7%;
+    --clr-light: 231 77% 90%;
+    --clr-white: 0 0% 100%;
+    --clr-green: 183 77% 36%;
+    
+    /* font-sizes */
+    --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+    --fs-800: 3.5rem;
+    --fs-700: 1.5rem;
+    --fs-600: 1rem;
+    --fs-500: 1.75rem;
+    --fs-400: 0.9375rem;
+    --fs-300: 1rem;
+    --fs-200: 0.875rem;
+    
+    /* font-families */
+    --ff-serif: "Bellefair", serif;
+    --ff-sans-cond: "Barlow Condensed", sans-serif;
+    --ff-sans-normal: "Barlow", sans-serif;
+
+    padding: 0;
+    color: hsl( var(--clr-white) ); 
+}
+
+@media (min-width: 35em) {
+    :root {
+        --fs-800: 5rem;
+        --fs-700: 2.5rem;
+        --fs-600: 1.5rem;
+        --fs-400: 1rem;
+    }
+}
+
+@media (min-width: 45em) {
+    :root {
+        /* font-sizes */
+        --fs-800: 6.25rem;
+        --fs-700: 3.5rem;
+        --fs-600: 2rem;
+        --fs-400: 1.125rem;
+    }
+}
+
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0; 
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+
+/* ------------------- */
+/* Compontents         */
+/* ------------------- */
+.test {
+    border:1px solid red;
+}
+
+/* typography */
+
+.ff-serif { font-family: var(--ff-serif); } 
+.ff-sans-cond { font-family: var(--ff-sans-cond); } 
+.ff-sans-normal { font-family: var(--ff-sans-normal); } 
+
+.letter-spacing-1 { letter-spacing: 4.75px; } 
+.letter-spacing-2 { letter-spacing: 2.7px; } 
+.letter-spacing-3 { letter-spacing: 2.35px; } 
+
+.uppercase { text-transform: uppercase; }
+
+.fs-900 { font-size: var(--fs-900); }
+.fs-800 { font-size: var(--fs-800); }
+.fs-700 { font-size: var(--fs-700); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-400 { font-size: var(--fs-400); }
+.fs-300 { font-size: var(--fs-300); }
+.fs-200 { font-size: var(--fs-200); }
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+    line-height: 1.1;
+}
+
+a {
+    color:inherit;
+}
+
+a:hover {
+    color:#0fa968;
+}
+
+.home {
+    display:grid;
+    /*background-color: #effef7;*/
+    background: linear-gradient(#effef7, #b8fadd);
+    color:#11563a;
+    align-content: center;
+    grid-template: 
+    ". intro ." auto 
+    ". content ." auto 
+    / 1fr minmax(800px,60%) 1fr;
+    margin-top:100px;
+}
+
+.intro{
+    grid-area: intro;
+    display:grid;
+    justify-items: center;
+    margin-top:100px;
+    margin-bottom:400px;
+    font-family: var(--ff-sans-normal);
+
+}
+
+.name {
+    font-size: var(--fs-800);
+}
+
+.position {
+    font-size: var(--fs-700);
+    padding:20px 30px;
+    margin-right:10px;
+    border-radius: 1em;
+    color:white;
+    background-color:#126945;
+    margin-top:.5em;
+}
+
+.claim {
+    font-size: var(--fs-600);
+    margin-top:.5em;
+    text-align: center;
+    max-width: 520px;
+}
+
+.cv{
+    grid-area: content;
+    gap:200px;
+    display:grid;
+}
+
+.timeline-item {
+    padding-bottom: 50px;
+}
+
+.timeline-item:not(:last-child){
+    border-bottom: 1px solid #108554;
+
+}
+
+.timeline-item:last-child{
+    margin-bottom: 100px;
+
+}
+
+.company {
+    font-size: var(--fs-700);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.duration {
+    font-size: var(--fs-500);
+    font-family: var(--ff-sans-normal);
+    color:#0fa968;
+}
+
+.clients {
+    font-size: var(--fs-600);
+    font-family: var(--ff-sans-normal);
+    margin-top: 20px;
+}
+.clients > span{
+    font-family: var(--ff-sans-normal);
+    font-weight: 600;
+}
+
+.tech-list{
+    display:flex;
+    justify-content: left;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.tech {
+    font-family: var(--ff-sans-cond);
+    background-color:#0fa968;
+    color:white;
+    font-size:var(--fs-500);
+    padding:10px 20px;
+    margin-right:10px;
+    border-radius: 1em;
+    margin-top:1em;
+}
