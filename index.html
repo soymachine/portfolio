@@ -8,126 +8,160 @@
   <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&display=swap"
       rel="stylesheet">
       
   <!-- Our custom CSS -->
-  <link rel="stylesheet" href="css/index.css">
-  <title>Dani Moya | CV</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>  
-  <script src="./js/lib/anime.min.js"></script>
-  <script src="./js/lib/fps.min.js"></script>
-  <script type="module" src="./js/index.js" defer></script>
+  <link rel="stylesheet" href="css/cv.css">
+  <title>Dani Moya | Full Stack Developer</title>
+  
 </head>
 <body class="home">
-    <div class="container">
-        <!-- BACKGROUND -->
-        <div id="background"></div>
-
-        <!-- DOORS -->
-        <div id="door_one" class="full-width-div door"></div>
-        <div id="door_two" class="full-width-div door"></div>
-
-        <!-- ********** -->
-        <!-- CONTENIDO -->
-        <!-- ********** -->
-
-        <!-- INICIO -->
-        <div id="home" class="" style="--gap:6em;">
-            <div id="tech-col">
-                <div class="timeline-line"></div>
-                <button id="tech-button"><h3>TECH</h3></button>
+    <div class="intro">
+        <div class="intro-picture">
+            <img class="flip-img" src="assets/imgs/dani.png">
+        </div>
+        <div class="intro-data">
+            <div class="data-main">
+                <div class="name">DANI MOYA</div>
+                <div class="position">Full Stack Developer</div>
             </div>
-            <div id="content-col">
-                <div class="ff-sans-cond fs-500">Hello, I'm</div>
-                <div class="ff-serif fs-800">Dani Moya</div>
-                <img src="./assets/imgs/dani.png" />
-                <div class="ff-sans-normal fs-600">FULLSTACK DEVELOPER</div>
-                <button id="bio-button" style="margin-top:6em;"><h3>BIO</h3></button>
-            </div>
-            <div id="timeline-col" class="">
-                <button id="timeline-button" ><h3>TIMELINE</h3></button>
-                <div class="timeline-line">
-                    
+            <div class="data-contact">
+                <div class="pair">
+                    <div class="contact-label">BORN</div>
+                    <div class="contact-description">13 May 1979</div>
+                </div>
+                <div class="pair">
+                    <div class="contact-label">EMAIL</div>
+                    <div class="contact-description"><a href="ad">dani.moya.teruel@gmail.com</a></div>
+                </div>
+                <div class="pair">
+                    <div class="contact-label">ADRESS</div>
+                    <div class="contact-description">Seva, Barcelona (08553)</div>
+                </div>
+                <div class="pair">
+                    <div class="contact-label">LINKEDIN</div>
+                    <div class="contact-description"><a href="https://www.linkedin.com/in/danimoya/" target="_blank">https://www.linkedin.com/in/danimoya/</a></div>
                 </div>
             </div>
-        </div>
-
-        <!-- TECH -->
-        <div id="tech" class="full-width-div">
-            <div>
-                <button id="tech-back-button">Back HOME</button>
-            </div>
-            <div class="ff-serif fs-800">TECH</div>
-            <div>Hablar aquí de los conocimientos técnicos</div>
-            
-        </div>
-
-        <!-- TIMELINE -->
-        <div id="timeline" class="full-width-div">
-            <button id="timeline-back-button">Back HOME</button>
-            <div id="timeline-content">
-                <div class="timeline-line">
-                    <a href="#" id="tlb-2003"><div id="tl-2003" class="timeline-point dot"></div></a>
-                    <div id="item-2003" class="timeline-item">
-                        <div class="ff-serif">2003</div>
-                        <div class="ff-sans-cond">Whads/Accent</div>
-                    </div>
-
-                    <a href="#" id="tlb-2005"><div id="tl-2005" class="timeline-point dot"></div></a>
-                    <div id="item-2005" class="timeline-item timeline-position-top">
-                        <div class="ff-serif">2005</div>
-                        <div class="ff-sans-cond">identitat</div>
-                    </div>
-
-                    <a href="#" id="tlb-2009"><div id="tl-2009" class="timeline-point dot"></div></a>
-                    <div id="item-2009" class="timeline-item">
-                        <div class="ff-serif">2009</div>
-                        <div class="ff-sans-cond">king-e-client</div>
-                    </div>
-
-                    <a href="#" id="tlb-2010"><div id="tl-2010" class="timeline-point dot"></div></a>
-                    <div id="item-2010" class="timeline-item timeline-position-top">
-                        <div class="ff-serif">2010</div>
-                        <div class="ff-sans-cond">LBi/Digitas</div>
-                    </div>
-                    
-                    <a href="#" id="tlb-2012"><div id="tl-2012" class="timeline-point dot"></div></a>
-                    <div id="item-2012" class="timeline-item">
-                        <div class="ff-serif">2012</div>
-                        <div class="ff-sans-cond">Appnormals</div>
-                    </div>
-
-                    <a href="#" id="tlb-2023"><div id="tl-2023" class="timeline-point dot"></div></a>
-                    <div id="item-2023" class="timeline-item">
-                        <div class="ff-serif">2023</div>
-                        <div class="ff-sans-cond">Today</div>
-                    </div>
-
-                    <div id="tl-visit-info">VISIT</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- BIO -->
-        <div id="bio" class="full-width-div flow">
-            <div>
-                <button id="bio-back-button">Back HOME</button>
-            </div>
-            <div class="bio-content flow">
-                <p>So I suppose I will have to start by mentioning that I was <span>born in 1979.</span> That's only relevant to determine to my age, I suppose</p>
-                <p>So let's go to the meaty parts:</p>
-                <p><span>I started coding in 2002</span>. But that time I finish my business bachelor, but the internet and the world wide web was a strong force that pull me into learning Flash and Actionscript.</p>
-                <p><span>In 2003 I got my first job</span> as a "flash developer" at <a class="external-link" href="hhttp://www.whads.com">whads/accent</a> mainly doing interactive websites and mini-games.</p>
-                <p>By late 2005, a coworker and I <span>co-founded our own company</span> <a class="external-link" href="www.identitt.com">identitat</a> where we work for 4 years doing all kinds of solutions. My main role was again flash developer doing interactive sites, promotional websites and minigames.</p>
-                <p>In 2009, we <span>joined forces</span> with <a class="external-link" href="https://kingeclient.com/">king-e-client</a> adding our company know-how, expertise, clients to a bigger team.</p>
-                <p>By 2010, I lived in Sweden for a year and a half <span>and worked there at</span> <a class="external-link" href="https://www.digitas.com/">Digitas LBi Sweeden</a> as a creative developer.</p>
-                <p>Came back from Sweden in 2012, and co-founded another company called <a class="external-link" href="https://www.appnormals.com/">Appnormals</a> where we made a bunch of games (PixelWorld, SuperBarista!, Colorem Ipsum, Stay, Terracotta and Frank&Drake) for mobile, consoles and PC.</p>
-                <p>We also did a bunch of work-for-hire: a massive multiplayer quizz game, a dashboard solution for a research management company, a iOS multiplayer battle royale game, and many others</p>
-            </div>
-            
         </div>
         
+    </div>
+    <div class="expertise">
+        <div class="title">SKILLS</div>
+        <ul class="expertise-list">
+            <li>
+                <div class="expertise-item">JavaScript</div>
+                <div class="expertise-score-holder"><div class="expertise-score score-90"></div>
+            </li>
+            <li>
+                <div class="expertise-item">CCS</div>
+                <div class="expertise-score-holder"><div class="expertise-score score-80"></div>
+            </li>
+            <li>
+                <div class="expertise-item">HTML</div>
+                <div class="expertise-score-holder"><div class="expertise-score score-80"></div>
+            </li>
+            <li>
+                <div class="expertise-item">C#</div>
+                <div class="expertise-score-holder"><div class="expertise-score score-95"></div>
+            </li>
+            <li>
+                <div class="expertise-item">PHP</div>
+                <div class="expertise-score-holder"><div class="expertise-score score-75"></div>
+            </li>
+            <li>
+                <div class="expertise-item">ActionScript</div>
+                <div class="expertise-score-holder"><div class="expertise-score score-95"></div>
+            </li>
+        </ul>
+    </div>
+    <div class="cv">
+        <div class="title">TIMELINE</div>
+        <ul class="history-list">
+            <li class="history-item">
+                <div class="duration ff-serif">2003 - 2006</div>
+                <h1 class="company ff-sans-cond"><a href="https://www.whads.com/" target="_blank" >WHADS / ACCENT</a></h1>
+                <div class="clients">Worked as Flash developer doing microsites, mini games and digital experiences for clients such as Intermon Oxfam, Fundació La Caixa or El Periodico.</div>
+                <div class="rol-description">Flash Developer, Frontend Developer</div>
+                <div class="tech-list">
+                    <div class="tech">Flash</div>
+                    <div class="tech">Actionscript</div>
+                    <div class="tech">HTML</div>
+                    <div class="tech">JavaScript</div>
+                    <div class="tech">CSS</div>
+                </div>
+            </li>
+            <li class="history-item">
+                <div class="duration ff-serif">2006 - 2009</div>
+                <h1 class="company ff-sans-cond">IDENTITAT S.L.</h1>
+                <div class="clients">Cofounded a company with <a href="https://www.linkedin.com/in/pere-barnola/" target="_blank">Pere Barnola</a>, managing a group of up to six people. Worked as a Flash expert for clients such as: Institut Català de la Energia, Naturhouse, Grupo AC Marca,...</div>
+                <div class="rol-description ff-sans">Co-Founder, Flash Developer, Management</div>
+
+                <div class="tech-list">
+                    <div class="tech">Flash</div>                
+                    <div class="tech">Actionscript</div>                
+                </div>
+            </li>
+            <li class="history-item">
+                <div class="duration ff-serif">2009 - 2010</div>
+                <h1 class="company ff-sans-cond"><a href="https://kingeclient.com/" target="_blank">KING E CLIENT</a></h1>
+                <div class="clients">A +30 people company bought Identitat and we lead the development team. Worked primarily as Flash expert for companies such as Grupo Catalana Occidente, Repsol, Agencia Residus de Catalunya</div>
+                <div class="rol-description">Flash Developer, Management</div>
+                <div class="tech-list">
+                    <div class="tech">Flash</div>
+                    <div class="tech">Actionscript</div>                
+                </div>
+            </li>
+            <li class="history-item">
+                <div class="duration ff-serif">2011 - 2012</div>
+                <h1 class="company ff-sans-cond">LOST BOYS INT. / SWEDEN</h1>
+                <div class="clients">Worked as a Creative Developer at LBI/Sweden, for clients such as Volvo, E.On (Energy) doing mini-games and promotional & campanings sites.</div>
+                <div class="rol-description">Creative Developer</div>
+                <div class="tech-list">
+                    <div class="tech">Flash</div>
+                    <div class="tech">Actionscript</div>                
+                </div>
+            </li>
+            <li class="history-item">
+                <div class="duration ff-serif">2012 - 2023</div>
+                <h1 class="company ff-sans-cond"><a href="https://appnormals.com/" target="_blank">APPNORMALS TEAM S.L.</a></h1>
+                <div class="clients">Co-founded a video game company with <a href="https://www.linkedin.com/in/designatius/" target="_blank">Iñaki Díaz</a> where we developed games for all major platforms: iOS, Android, Nintendo SWITCH, PS4, XBOX, PC, Mac
+                <br><br>
+                We created strong relationships with publishers as PQube, Plug-in-Digital, Ratalaika Games, Freedom Games and Chorus that helped publish our games.
+                <br><br>
+                We also did some work for hire for clients such as: Synapse Managers, CreatiFI
+                <br><br>
+                <span>Games</span>: PixelWorld #1, Pixelworld #2, Colorem Ipsum, SuperBarista, STAY, World Eaters, Terracotta and Frank & Drake
+                <br><br>
+                <span>Other work</span>:<a href="assets/video/pixcelona.mp4" target="_blank">Pixcelona</a> (Quiz multiusuario), Synapse Dashboard (<a href="https://synapse-pi.com/" target="_blank">Front</a> + <a href="https://synapse-pi.com/admin?url=admin" target"_blank">CMS</a>), Synapse Cube (<a href="https://datacube.roadmap-alzheimer.org/" target="_blank">Front</a> + <a hreF="https://appnormals.com/synapse_cube/backend/index.php" target="_blank">CMS</a>)</div>
+                <div class="rol-description">Co-founder, CTO</div>
+                <div class="tech-list">
+                    <div class="tech">Adobe Animate</div>                
+                    <div class="tech">Actionscript</div>                
+                    <div class="tech">C#</div>                
+                    <div class="tech">Unity</div>                
+                    <div class="tech">JavaScript</div>                
+                    <div class="tech">HTML</div>                
+                    <div class="tech">CSS</div>                
+                    <div class="tech">Phaser</div>                
+                    <div class="tech">PHP</div>                
+                    <div class="tech">CakePHP</div>                
+                    <div class="tech">MySQL</div>                
+                </div>
+            </li>
+            <li class="history-item">
+                <div class="duration ff-serif">TODAY</div>
+                <div class="company ff-sans-cond">FREELANCE</div>
+                <div class="clients">Learning React framework and working with MongoDB and Node.js. Created an app for keep track of food and exercice for myself:<a href="https://nutriapp.onrender.com/" target="_blank">nutriAPP</a></div>
+                <div class="rol-description">Full Stack</div>
+                <div class="tech-list">
+                    <div class="tech">React</div>                
+                    <div class="tech">Node.js</div>                
+                    <div class="tech">MongoDB</div>       
+                </div>
+            </li>
+        </ul>
         
     </div>
 </body>

@@ -127,6 +127,10 @@ a:hover {
     color:#0fa968;
 }
 
+.flip-img {
+    transform: scalex(-1);
+ }
+
 .home {
     display:grid;
     /*background-color: #effef7;*/
@@ -135,6 +139,7 @@ a:hover {
     align-content: center;
     grid-template: 
     ". intro ." auto 
+    ". expertise ." auto 
     ". content ." auto 
     / 1fr minmax(600px, 900px) 1fr;
     margin-top:100px;
@@ -146,8 +151,7 @@ a:hover {
     grid-template: 
     "picture data" auto     
     / 1fr 2fr;
-    margin-top:100px;
-    margin-bottom:400px;
+    
     font-family: var(--ff-sans-normal);
     background-color: white;
     border-radius: 1em;
@@ -176,7 +180,10 @@ a:hover {
 
 .name {
     font-size: 80px;
-    font-family: var(--ff-serif);
+    margin-left:-6px;
+    color:#25cb86;
+    font-weight: 600;
+    font-family: var(--ff-sans-normal);
 }
 
 .position {
@@ -203,7 +210,8 @@ a:hover {
 
 .contact-label {
     grid-area: label;
-    font-family: var(--ff-serif);
+    color:rgb(37, 203, 134);
+    font-family: var(--ff-sans-normal);
 }
 
 .contact-description{
@@ -220,9 +228,78 @@ a:hover {
 
 .cv{
     grid-area: content;
-    gap:200px;
     display:grid;
-    margin-left: 80px;
+    margin-top: 30px;
+}
+
+.expertise{
+    grid-area: expertise;
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+.title {
+    font-family: var(--ff-sans-cond);
+    font-size: var(--fs-700);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.expertise-list {
+    margin:0;
+    padding:0;
+}
+
+.expertise li {
+    list-style: none;
+    position: relative;
+    padding-bottom: 20px;
+
+}
+
+.expertise-item{
+    font-family: var(--ff-sans-normal);
+    font-size: var(--fs-400);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.expertise-score-holder{
+    height: 12px;
+    width: 100%;
+    background: rgba(37, 203, 134, 0.1);
+    padding: 0px;
+    position: relative;
+    border-radius: 5px;
+}
+
+.expertise-score{
+    height: 12px;
+    background: rgba(37, 203, 134, 1);
+    padding: 0px !important;
+    left: 0px;
+    position: absolute;
+    border-radius: 5px;
+}
+
+.score-90 {
+    width: 90%;
+}
+
+.score-95 {
+    width: 95%;
+}
+
+.score-75 {
+    width: 75%;
+}
+
+.score-80 {
+    width: 80%;
+}
+
+.history-list {
+    
 }
 
 .history-item {
@@ -236,7 +313,7 @@ a:hover {
     background-color: #0fa968;
     content: "";
     height: 100%;
-    left: 3.5px;
+    left: 4px;
     position: absolute;
     top: 30px;
     width: 1px;
@@ -244,7 +321,7 @@ a:hover {
 
 .history-item:after {
     background-color: #0fa968;
-    border: 1px solid #0fa968;
+    border: 2px solid #0fa968;
     border-radius: 50%;
     box-sizing: border-box;
     content: "";
@@ -266,9 +343,10 @@ a:hover {
 }
 
 .company {
-    font-size: var(--fs-700);
+    font-size: var(--fs-600);
     font-weight: 500;
     margin-bottom: 1rem;
+    margin-top: -7px;
 }
 
 .duration {
@@ -277,7 +355,7 @@ a:hover {
     color:#0fa968;
     position: relative;
     left: -157px;
-    top: 50px;
+    top: 25px;
     
 }
 
@@ -285,6 +363,9 @@ a:hover {
     font-size: var(--fs-500);
     font-family: var(--ff-sans-normal);
     margin-top: 20px;
+    border-bottom: 1px solid rgba(17, 86, 58, 0.5);
+    padding-bottom: 35px;
+    margin-bottom: 10px;
 }
 .clients > span{
     font-family: var(--ff-sans-normal);
@@ -307,4 +388,14 @@ a:hover {
     margin-right:10px;
     border-radius: 1em;
     margin-top:1em;
+}
+
+.rol-label {
+    font-family: var(--ff-sans-cond);
+    font-size: var(--fs-400);
+}
+
+.rol-description {
+    font-family: var(--ff-sans-normal);
+    font-size: var(--fs-400);
 }
