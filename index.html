@@ -13,10 +13,19 @@
       
   <!-- Our custom CSS -->
   <link rel="stylesheet" href="css/cv.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>  
+  <script src="./js/lib/anime.min.js"></script>
+  <script src="./js/lib/fps.min.js"></script>
+  <script src="./js/cv/index.js"></script>
   <title>Dani Moya | Full Stack Developer</title>
   
 </head>
 <body class="home">
+    <div class="tooltip">
+        <img id="tooltip-image" class="tooltip-image" src="/assets/imgs/portfolio-synapse-dashboard.png">
+        <div id="tooltip-description">Visit Linkedin profile</div>
+        <img class="tooltip-wedge" src="assets/imgs/tooltip-wedge.png">
+    </div>
     <div class="intro">
         <div class="intro-picture">
             <img class="flip-img" src="assets/imgs/dani.png">
@@ -67,7 +76,23 @@
                 <div class="expertise-score-holder"><div class="expertise-score score-95"></div>
             </li>
             <li>
+                <div class="expertise-item">NodeJS</div>
+                <div class="expertise-score-holder"><div class="expertise-score score-75"></div>
+            </li>
+            <li>
                 <div class="expertise-item">PHP</div>
+                <div class="expertise-score-holder"><div class="expertise-score score-80"></div>
+            </li>
+            <li>
+                <div class="expertise-item">MySQL</div>
+                <div class="expertise-score-holder"><div class="expertise-score score-80"></div>
+            </li>
+            <li>
+                <div class="expertise-item">MongoDB</div>
+                <div class="expertise-score-holder"><div class="expertise-score score-75"></div>
+            </li>
+            <li>
+                <div class="expertise-item">React</div>
                 <div class="expertise-score-holder"><div class="expertise-score score-75"></div>
             </li>
             <li>
@@ -81,7 +106,7 @@
         <ul class="history-list">
             <li class="history-item">
                 <div class="duration ff-serif">2003 - 2006</div>
-                <h1 class="company ff-sans-cond"><a href="https://www.whads.com/" target="_blank" >WHADS / ACCENT</a></h1>
+                <h1 class="company ff-sans-cond"><a data-id="whads" href="https://www.whads.com/" target="_blank" >WHADS / ACCENT</a></h1>
                 <div class="clients">Worked as Flash developer doing microsites, mini games and digital experiences for clients such as Intermon Oxfam, Fundació La Caixa or El Periodico.</div>
                 <div class="rol-description">Flash Developer, Frontend Developer</div>
                 <div class="tech-list">
@@ -95,7 +120,7 @@
             <li class="history-item">
                 <div class="duration ff-serif">2006 - 2009</div>
                 <h1 class="company ff-sans-cond">IDENTITAT S.L.</h1>
-                <div class="clients">Cofounded a company with <a href="https://www.linkedin.com/in/pere-barnola/" target="_blank">Pere Barnola</a>, managing a group of up to six people. Worked as a Flash expert for clients such as: Institut Català de la Energia, Naturhouse, Grupo AC Marca,...</div>
+                <div class="clients">Cofounded a company with <a data-id="pere" href="https://www.linkedin.com/in/pere-barnola/" target="_blank">Pere Barnola</a>, managing a group of up to six people. Worked as a Flash expert for clients such as: Institut Català de la Energia, Naturhouse, Grupo AC Marca,...</div>
                 <div class="rol-description ff-sans">Co-Founder, Flash Developer, Management</div>
 
                 <div class="tech-list">
@@ -105,7 +130,7 @@
             </li>
             <li class="history-item">
                 <div class="duration ff-serif">2009 - 2010</div>
-                <h1 class="company ff-sans-cond"><a href="https://kingeclient.com/" target="_blank">KING E CLIENT</a></h1>
+                <h1 class="company ff-sans-cond"><a data-id="kingeclient" href="https://kingeclient.com/" target="_blank">KING E CLIENT</a></h1>
                 <div class="clients">A +30 people company bought Identitat and we lead the development team. Worked primarily as Flash expert for companies such as Grupo Catalana Occidente, Repsol, Agencia Residus de Catalunya</div>
                 <div class="rol-description">Flash Developer, Management</div>
                 <div class="tech-list">
@@ -125,8 +150,8 @@
             </li>
             <li class="history-item">
                 <div class="duration ff-serif">2012 - 2023</div>
-                <h1 class="company ff-sans-cond"><a href="https://appnormals.com/" target="_blank">APPNORMALS TEAM S.L.</a></h1>
-                <div class="clients">Co-founded a video game company with <a href="https://www.linkedin.com/in/designatius/" target="_blank">Iñaki Díaz</a> where we developed games for all major platforms: iOS, Android, Nintendo SWITCH, PS4, XBOX, PC, Mac
+                <h1 class="company ff-sans-cond"><a data-id="appnormals" href="https://appnormals.com/" target="_blank">APPNORMALS TEAM S.L.</a></h1>
+                <div class="clients">Co-founded a video game company with <a data-id="inaki" href="https://www.linkedin.com/in/designatius/" target="_blank">Iñaki Díaz</a> where we developed games for all major platforms: iOS, Android, Nintendo SWITCH, PS4, XBOX, PC, Mac
                 <br><br>
                 We created strong relationships with publishers as PQube, Plug-in-Digital, Ratalaika Games, Freedom Games and Chorus that helped publish our games.
                 <br><br>
@@ -134,7 +159,7 @@
                 <br><br>
                 <span>Games</span>: PixelWorld #1, Pixelworld #2, Colorem Ipsum, SuperBarista, STAY, World Eaters, Terracotta and Frank & Drake
                 <br><br>
-                <span>Other work</span>:<a href="assets/video/pixcelona.mp4" target="_blank">Pixcelona</a> (Quiz multiusuario), Synapse Dashboard (<a href="https://synapse-pi.com/" target="_blank">Front</a> + <a href="https://synapse-pi.com/admin?url=admin" target"_blank">CMS</a>), Synapse Cube (<a href="https://datacube.roadmap-alzheimer.org/" target="_blank">Front</a> + <a hreF="https://appnormals.com/synapse_cube/backend/index.php" target="_blank">CMS</a>)</div>
+                <span>Other work</span>:<a href="assets/video/pixcelona.mp4" target="_blank">Pixcelona</a> (Quiz multiusuario), Synapse Dashboard (<a data-id="synapse-pi-dashboard" href="https://synapse-pi.com/" target="_blank">Front</a> + <a data-id="synapse-pi-cms" href="https://synapse-pi.com/admin?url=admin" target"_blank">CMS</a>), Synapse Cube (<a data-id="synapse-cube-front" href="https://datacube.roadmap-alzheimer.org/" target="_blank">Front</a> + <a data-id="synapse-cube-back" href="https://appnormals.com/synapse_cube/backend/index.php" target="_blank">CMS</a>)</div>
                 <div class="rol-description">Co-founder, CTO</div>
                 <div class="tech-list">
                     <div class="tech">Adobe Animate</div>                
@@ -153,7 +178,7 @@
             <li class="history-item">
                 <div class="duration ff-serif">TODAY</div>
                 <div class="company ff-sans-cond">FREELANCE</div>
-                <div class="clients">Learning React framework and working with MongoDB and Node.js. Created an app for keep track of food and exercice for myself:<a href="https://nutriapp.onrender.com/" target="_blank">nutriAPP</a></div>
+                <div class="clients">Learning React framework and working with MongoDB and Node.js. Created an app for keep track of food and exercice for my partner and myself:<a href="https://nutriapp.onrender.com/" target="_blank">NutriAPP</a></div>
                 <div class="rol-description">Full Stack</div>
                 <div class="tech-list">
                     <div class="tech">React</div>                

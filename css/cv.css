@@ -253,14 +253,14 @@ a:hover {
 .expertise li {
     list-style: none;
     position: relative;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 
 }
 
 .expertise-item{
     font-family: var(--ff-sans-normal);
     font-size: var(--fs-400);
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     font-weight: 600;
 }
 
@@ -356,7 +356,7 @@ a:hover {
     position: relative;
     left: -157px;
     top: 25px;
-    
+    z-index: -1;
 }
 
 .clients {
@@ -398,4 +398,36 @@ a:hover {
 .rol-description {
     font-family: var(--ff-sans-normal);
     font-size: var(--fs-400);
+}
+
+.tooltip {
+    position: absolute;
+    top:50px;
+    left:50px;
+    background-color:white;
+    border-radius:10px;
+    font-family: var(--ff-sans-normal);
+    width: 200px;
+    height: 240px;
+    z-index:1000;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transform: perspective(1500px) rotateY(0deg) rotateX(0deg);
+    pointer-events: none;
+}
+
+#tooltip-description{
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.tooltip-image {
+    width: 200px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.tooltip-wedge {
+    position: absolute;
+    top: 236px;
+    left: 30px;
 }
