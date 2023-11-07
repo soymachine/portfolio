@@ -13,10 +13,17 @@ $(document).ready(function(){
 
         let tooltipWidth = 200
         let tooltipHeight = 200
-
+        let automaticImageIndex = 0
+        let automaticImageScrollTime = Date.now();
+        let automaticImageScrollMaxTime = 2000;
+        let automaticImageScroll = false
+        let automaticImageScrollTotalImages = 0
+        let automaticImagesLoaded = false
+        const tooltipSpeed = 500
         const tooltip = $(".tooltip")
         const tooltipWedge = $(".tooltip-wedge")
         const tooltipImage = $("#tooltip-image")
+        const tooltipImageContainer = $(".tooltip-image-container")
         const tooltipDescription = $("#tooltip-description")
         const minDegrees = -20
         const maxDegrees = 20
@@ -35,46 +42,67 @@ $(document).ready(function(){
 
         const data = {
             "inaki": {
+                total:1,
+                type:"none",
                 label:"Visit Linkedin profile",
                 url: "https://media.licdn.com/dms/image/C4D03AQH6FXEAH78R7w/profile-displayphoto-shrink_800_800/0/1661628840724?e=1704931200&v=beta&t=AZmL606TNrJXejprplIxH-77gw6tDLB8UWupMH0uuDE"
             },
             "pere": {
+                total:1,
+                type:"none",
                 label:"Visit Linkedin profile",
                 url: "https://media.licdn.com/dms/image/C4E03AQGjnvgvxN93Zw/profile-displayphoto-shrink_200_200/0/1652340024906?e=1704931200&v=beta&t=lzLnNCWUOa_WCkdOnl2cDvZWwga_ryy2C4UTOvxy2iU"
             },
             "synapse-pi-dashboard": {
+                total:6,
+                type:"png",
                 label:"Visit website",
-                url: "/assets/imgs/portfolio-synapse-dashboard.png"
+                url: "/assets/imgs/portfolio-synapse-dashboard"
             },
             "synapse-pi-cms": {
+                total:1,
+                type:"png",
                 label:"Restricted access only",
-                url: "/assets/imgs/portfolio-synapse-cms.png"
+                url: "/assets/imgs/portfolio-synapse-cms"
             },
             "synapse-cube-front": {
+                total:1,
+                type:"png",
                 label:"Visit website",
-                url: "/assets/imgs/portfolio-synapsecube-front.png"
+                url: "/assets/imgs/portfolio-synapsecube-front"
             },
             "synapse-cube-back": {
+                total:1,
+                type:"png",
                 label:"Restricted access only",
-                url: "/assets/imgs/portfolio-synapsecube-back.png"
+                url: "/assets/imgs/portfolio-synapsecube-back"
             },
             "kingeclient": {
+                total:1,
+                type:"png",
                 label:"Visit website",
-                url: "/assets/imgs/kingeclient.png"
+                url: "/assets/imgs/kingeclient"
             },
             "whads": {
+                total:1,
+                type:"png",
                 label:"Visit website",
-                url: "/assets/imgs/whads.png"
+                url: "/assets/imgs/whads"
             },
             "appnormals": {
+                total:1,
+                type:"png",
                 label:"Visit website",
-                url: "/assets/imgs/appnormals.png"
+                url: "/assets/imgs/appnormals"
             },
         }
 
         $( "a" ).on( "mouseenter", handleIn ).on( "mouseleave", handleOut ).on("mousemove", handleMouseMove);
         
 
+        addEventListener("wheel", onscroll);
+
+        
         addEventListener("scroll", onscroll)
 
         function onscroll(event) {
@@ -96,8 +124,57 @@ $(document).ready(function(){
             // Existe?
             if(data[id] != undefined){
                 showTooltip()
-                const url = data[id].url
-                tooltipImage.attr("src", url)
+                const {url, total, label, type} = data[id]
+                let imageElements = ""
+                let imageList = []
+                tooltipImageContainer.empty()
+                if(total > 1){
+                    // Necesitamos loop   
+                    automaticImageScroll = true
+                    automaticImagesLoaded = false  
+                    automaticImageScrollTotalImages = total    
+                    automaticImageIndex = 0           
+                    for (let index = 0; index < total; index++) {
+                        const zIndex = total - index;
+                        
+                        let left = 0
+                        if(index > 0){
+                            left = tooltipWidth
+                        }
+                        
+                        const imageElement = `<img id="tooltip-image-${index}" class="tooltip-image" src="${url}-${index+1}.${type}" style="z-index:${zIndex}; left:${left}px;">`
+                        imageElements+=imageElement  
+                        
+                        tooltipImageContainer.append(imageElement)
+
+                        imageList.push($(`#tooltip-image-${index}`)[0])
+                    }
+
+                    // La imagen de loading
+                    tooltipImageContainer.append(`<img id="tooltip-image-loading" class="tooltip-image" src="/assets/imgs/loading.gif" style="z-index:${total}; left:0px;">`)
+
+                    Promise.all(Array.from(imageList).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
+                        onTooltipImagesLoaded()
+                    })
+                    
+
+                }else{
+                    // No necesitamos loop
+                    automaticImageScroll = false
+                    let imageElement;
+                    if(type == "none"){
+                        imageElement = `<img class="tooltip-image" src="${url}">`
+                    }else{
+                        imageElement = `<img class="tooltip-image" src="${url}.${type}">`
+                    }
+
+                    tooltipImageContainer.append(imageElement)
+
+                    $("#tooltip-image-loading").remove()
+                }
+
+                
+                // tooltipImage.attr("src", url)
                 
                 const description = data[id].label
                 tooltipDescription.html(description)
@@ -107,8 +184,6 @@ $(document).ready(function(){
                 var link_rect = this.getBoundingClientRect()
                 window.scrollX
 
-                console.log("scrollX:" + window.scrollX)
-                
                 setOffsetY(link_rect.y)
                 
             }
@@ -146,10 +221,60 @@ $(document).ready(function(){
                 const yRotation = clamp(dX, minDegrees, maxDegrees)
                 const xRotation = clamp(dY * -1, minDegrees, maxDegrees)
                 tooltip.css("transform", "perspective(1500px) rotateY("+yRotation+"deg) rotateX("+xRotation+"deg)");
+
+                if(automaticImageScroll && automaticImagesLoaded){
+                    // check time
+
+                    var now = Date.now();
+                    var dt = now - automaticImageScrollTime;
+                    if(dt > automaticImageScrollMaxTime){
+                        automaticImageScrollTime = Date.now();
+                        
+                        nextImage()
+                       
+                    }
+                    
+
+                }
             }
 
 
             window.requestAnimationFrame(loop);
+        }
+
+        function nextImage(){
+
+            const currentImage = automaticImageIndex
+            
+            // Incrementamos la actual
+            automaticImageIndex =  automaticImageIndex + 1
+            
+            // Si se sale de los límites, calculamos la siguiente (será la primera de todas)
+            if(automaticImageIndex == automaticImageScrollTotalImages){
+                automaticImageIndex = 0
+            }
+
+            // Move out la actual
+            const animation = anime({
+                targets: `#tooltip-image-${currentImage}`,
+                left: -tooltipWidth,
+                easing: 'easeOutQuad',
+                duration: tooltipSpeed
+            });
+
+            // Move in la siguiente
+            anime({
+                targets: `#tooltip-image-${automaticImageIndex}`,
+                left: 0,
+                easing: 'easeOutQuad',
+                duration: tooltipSpeed
+            });
+
+            animation.finished.then(()=>{
+                // Movemos al que salío a X 200
+                //$(`#tooltip-image-${automaticImageIndex}`).css("left", tooltipWidth + "px")
+                console.log($(`#tooltip-image-${currentImage}`).css("left", `${tooltipWidth}px`))
+            })
         }
 
         window.requestAnimationFrame(loop);
@@ -188,6 +313,14 @@ $(document).ready(function(){
                 xOffset = (-200 * .5) + 55;
                 tooltipWedge.css("left", "30px")
             }
+        }
+
+        /* automatic image scroll */
+        function onTooltipImagesLoaded(){
+            automaticImagesLoaded = true
+            automaticImageScrollTime = Date.now();
+
+            $("#tooltip-image-loading").remove()
         }
     }
     

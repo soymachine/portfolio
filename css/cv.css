@@ -398,10 +398,10 @@ a:hover {
 }
 
 .tooltip {
-    display: none;
+    /*display: none;*/
     position: absolute;
-    top:50px;
-    left:50px;
+    top:150px;
+    left:150px;
     background-color:white;
     border-radius:10px;
     font-family: var(--ff-sans-normal);
@@ -416,12 +416,23 @@ a:hover {
 #tooltip-description{
     margin-left: 10px;
     margin-top: 5px;
+    position:relative;
 }
 
-.tooltip-image {
+.tooltip-image-container {
+    overflow: hidden;
+    position: relative;
     width: 200px;
+    height: 200px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+}
+
+.tooltip-image{
+    position:absolute;
+    top:0px;
+    left:0px;
+    width: 200px;
 }
 
 .tooltip-wedge {
@@ -504,7 +515,7 @@ a:hover {
         ". intro ." auto 
         ". expertise ." auto 
         ". content ." auto 
-        / 1fr minmax(300px, 480px) 1fr;
+        / 1fr minmax(300px, 420px) 1fr;
         margin-top:20px;
     }
 
@@ -514,7 +525,7 @@ a:hover {
     }
  }
 
- @media (max-width: 420px) {
+ @media (max-width: 440px) {
 
     .home {
         grid-template: 
@@ -534,6 +545,10 @@ a:hover {
     }
 
     .name {
+        font-size: var(--fs-800);
+    }
+
+    .company{
         font-size: var(--fs-800);
     }
     
