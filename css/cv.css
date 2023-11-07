@@ -298,10 +298,6 @@ a:hover {
     width: 80%;
 }
 
-.history-list {
-    
-}
-
 .history-item {
     list-style: none;
     position: relative;
@@ -432,3 +428,69 @@ a:hover {
     top: 236px;
     left: 30px;
 }
+
+
+@media (max-width: 1065px) {
+    .home {
+        grid-template: 
+        ". intro ." auto 
+        ". expertise ." auto 
+        ". content ." auto 
+        / 1fr minmax(500px, 700px) 1fr;
+        margin-top:20px;
+    }
+
+    .intro {
+        grid-template: 
+        "picture" auto     
+        "data" auto     
+        / 1fr;  
+    }
+
+    .intro-picture{
+        margin:auto;
+    }
+
+    .intro-data{
+        margin:0;
+    }
+
+    .data-main{
+        text-align: center;
+    }
+
+    .data-contact{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+  }
+
+  @media (max-width: 862px) {
+    .home {
+        grid-template: 
+        ". intro ." auto 
+        ". expertise ." auto 
+        ". content ." auto 
+        / 1fr minmax(300px, 600px) 1fr;
+        margin-top:20px;
+    }
+
+    .duration {
+        left:0px;
+    }
+
+    .company{
+        margin-top: 33px;
+    }
+
+    .history-list{
+        margin:0px;
+        padding:0px;
+    }
+
+    .history-item{
+        padding-left: 30px;
+        padding-bottom: 40px;
+    }
+
+  }
