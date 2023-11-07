@@ -30,7 +30,7 @@ $(document).ready(function(){
             url: "https://media.licdn.com/dms/image/C4E03AQGjnvgvxN93Zw/profile-displayphoto-shrink_200_200/0/1652340024906?e=1704931200&v=beta&t=lzLnNCWUOa_WCkdOnl2cDvZWwga_ryy2C4UTOvxy2iU"
         },
         "synapse-pi-dashboard": {
-            label:"Visit",
+            label:"Visit website",
             url: "/assets/imgs/portfolio-synapse-dashboard.png"
         },
         "synapse-pi-cms": {
@@ -38,7 +38,7 @@ $(document).ready(function(){
             url: "/assets/imgs/portfolio-synapse-cms.png"
         },
         "synapse-cube-front": {
-            label:"Visit",
+            label:"Visit website",
             url: "/assets/imgs/portfolio-synapsecube-front.png"
         },
         "synapse-cube-back": {
