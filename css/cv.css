@@ -513,3 +513,28 @@ a:hover {
         margin-right: 0px;
     }
  }
+
+ @media (max-width: 420px) {
+
+    .home {
+        grid-template: 
+        ". intro ." auto 
+        ". expertise ." auto 
+        ". content ." auto 
+        / 1fr minmax(300px, 320px) 1fr;
+        margin-top:20px;
+    }
+
+    .intro {
+        padding:1em;
+    }
+
+    .intro-picture > img {
+        max-width: 260px;
+    }
+
+    .name {
+        font-size: var(--fs-800);
+    }
+    
+ }
