@@ -143,6 +143,7 @@ a:hover {
     ". content ." auto 
     / 1fr minmax(600px, 900px) 1fr;
     margin-top:100px;
+    overflow-x: hidden;
 }
 
 .intro{
@@ -427,6 +428,7 @@ a:hover {
     position: absolute;
     top: 236px;
     left: 30px;
+    z-index: -1;
 }
 
 
@@ -493,4 +495,21 @@ a:hover {
         padding-bottom: 40px;
     }
 
-  }
+ }
+
+ @media (max-width: 620px) {
+
+    .home {
+        grid-template: 
+        ". intro ." auto 
+        ". expertise ." auto 
+        ". content ." auto 
+        / 1fr minmax(300px, 480px) 1fr;
+        margin-top:20px;
+    }
+
+    .data-contact{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+ }
