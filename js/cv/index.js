@@ -8,11 +8,14 @@ $(document).ready(function(){
     if (isMobile()) {
         
     } else {
-        let xOffset = (-200 * .5) + 55;
-        let yOffset = 275;
+        
 
-        let tooltipWidth = 200
-        let tooltipHeight = 200
+        let tooltipWidth = 320
+        let tooltipHeight = 273
+        let marginTop = 25
+        let xOffset = (-200 * .5) + 55;
+        let yOffset = tooltipHeight + marginTop;
+        let wedgeOffset = 5
         let automaticImageIndex = 0
         let automaticImageScrollTime = Date.now();
         let automaticImageScrollMaxTime = 2000;
@@ -43,15 +46,15 @@ $(document).ready(function(){
         const data = {
             "inaki": {
                 total:1,
-                type:"none",
+                type:"png",
                 label:"Visit Linkedin profile",
-                url: "https://media.licdn.com/dms/image/C4D03AQH6FXEAH78R7w/profile-displayphoto-shrink_800_800/0/1661628840724?e=1704931200&v=beta&t=AZmL606TNrJXejprplIxH-77gw6tDLB8UWupMH0uuDE"
+                url: "/assets/imgs/inaki"
             },
             "pere": {
                 total:1,
-                type:"none",
+                type:"png",
                 label:"Visit Linkedin profile",
-                url: "https://media.licdn.com/dms/image/C4E03AQGjnvgvxN93Zw/profile-displayphoto-shrink_200_200/0/1652340024906?e=1704931200&v=beta&t=lzLnNCWUOa_WCkdOnl2cDvZWwga_ryy2C4UTOvxy2iU"
+                url: "/assets/imgs/pbarnola"
             },
             "synapse-pi-dashboard": {
                 total:6,
@@ -60,7 +63,7 @@ $(document).ready(function(){
                 url: "/assets/imgs/portfolio-synapse-dashboard"
             },
             "synapse-pi-cms": {
-                total:1,
+                total:4 ,
                 type:"png",
                 label:"Restricted access only",
                 url: "/assets/imgs/portfolio-synapse-cms"
@@ -95,14 +98,103 @@ $(document).ready(function(){
                 label:"Visit website",
                 url: "/assets/imgs/appnormals"
             },
+            "pixcelona": {
+                total:1,
+                type:"gif",
+                label:"Website not available",
+                url: "/assets/imgs/pixcelona"
+            },
+            "nutriapp": {
+                total:5,
+                type:"png",
+                label:"Visit Website",
+                url: "/assets/imgs/nutriapp"
+            },
+            "synapsemanagers": {
+                total:1,
+                type:"png",
+                label:"Visit Website",
+                url: "/assets/imgs/synapsemanagers"
+            },
+            "thebreach": {
+                total:1,
+                type:"png",
+                label:"Visit Website",
+                url: "/assets/imgs/thebreach"
+            },
+            "vysion": {
+                total:1,
+                type:"png",
+                label:"Visit Website",
+                url: "/assets/imgs/vysion"
+            },
+            "creativeshift": {
+                total:5,
+                type:"png",
+                label:"Website not available",
+                url: "/assets/imgs/creativeshift"
+            },
+            "pixelworld1": {
+                total:1,
+                type:"gif",
+                label:"Visit Website",
+                url: "/assets/imgs/pixelworld1"
+            },
+            "pixelworld2": {
+                total:5,
+                type:"png",
+                label:"Visit Behance gallery",
+                url: "/assets/imgs/pw2"
+            },
+            "stay": {
+                total:1,
+                type:"png",
+                label:"Visit Steam page",
+                url: "/assets/imgs/stay"
+            },
+            "octopus": {
+                total:1,
+                type:"png",
+                label:"Visit Website",
+                url: "/assets/imgs/octopus"
+            },
+            "terracotta": {
+                total:1,
+                type:"png",
+                label:"Visit Steam page",
+                url: "/assets/imgs/terracotta"
+            },
+            "frankanddrake": {
+                total:1,
+                type:"png",
+                label:"Visit Steam page",
+                url: "/assets/imgs/frankanddrake"
+            },
+            "superbarista": {
+                total:1,
+                type:"png",
+                label:"Visit Behance gallery",
+                url: "/assets/imgs/superbarista"
+            },
+            "worldeaters": {
+                total:1,
+                type:"png",
+                label:"Visit iOS product store",
+                url: "/assets/imgs/worldeaters"
+            },
+            "coloremipsum": {
+                total:1,
+                type:"png",
+                label:"Visit Behance gallery",
+                url: "/assets/imgs/coloremipsum"
+            },
+            
         }
 
         $( "a" ).on( "mouseenter", handleIn ).on( "mouseleave", handleOut ).on("mousemove", handleMouseMove);
         
 
-        addEventListener("wheel", onscroll);
-
-        
+        addEventListener("wheel", onscroll)
         addEventListener("scroll", onscroll)
 
         function onscroll(event) {
@@ -224,20 +316,14 @@ $(document).ready(function(){
 
                 if(automaticImageScroll && automaticImagesLoaded){
                     // check time
-
-                    var now = Date.now();
-                    var dt = now - automaticImageScrollTime;
+                    var now = Date.now()
+                    var dt = now - automaticImageScrollTime
                     if(dt > automaticImageScrollMaxTime){
-                        automaticImageScrollTime = Date.now();
-                        
-                        nextImage()
-                       
+                        automaticImageScrollTime = Date.now()                      
+                        nextImage()                       
                     }
-                    
-
                 }
             }
-
 
             window.requestAnimationFrame(loop);
         }
@@ -291,8 +377,9 @@ $(document).ready(function(){
                 tooltipWedge.css("top","-8px")
                 tooltipWedge.css("transform","rotate(180deg)")
             }else{
-                yOffset = 275;
-                tooltipWedge.css("top","236px")
+                
+                yOffset = tooltipHeight + marginTop;
+                tooltipWedge.css("top",`${tooltipHeight - wedgeOffset}px`)
                 tooltipWedge.css("transform","rotate(0deg)")
             }
         }
@@ -324,6 +411,32 @@ $(document).ready(function(){
         }
     }
     
+    /* CSS cuando aparecen en pantalla */
+    const observer = new IntersectionObserver(entries => {
+        // Loop over the entries
+        entries.forEach(entry => {
+          // If the element is visible
+          if (entry.isIntersecting) {
+            // Add the animation class
+            console.log(entry.target.dataset.id)
+            if(    entry.target.dataset.id == 75 
+                || entry.target.dataset.id == 80
+                || entry.target.dataset.id == 85
+                || entry.target.dataset.id == 90
+                || entry.target.dataset.id == 95
+            ){
+                entry.target.classList.add(`score-${entry.target.dataset.id}`);
+            }
+          }
+        });
+      });
+      
+      var targets = [
+        Array.from(document.querySelectorAll('.expertise-score')),
+      ].flat();
+      targets.forEach((target) => observer.observe(target));
+
+      // observer.observe(document.querySelectorAll('.expertise-score'));
     
     
 
