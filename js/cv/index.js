@@ -10,11 +10,17 @@ $(document).ready(function(){
     } else {
         
 
+        const defaultTooltipH = 273
+        const tooltipH180 = 213
+
         let tooltipWidth = 320
-        let tooltipHeight = 273
+        let tooltipHeight = defaultTooltipH
         let marginTop = 25
         let xOffset = (-200 * .5) + 55;
+        
+        // Esto ha de ser dinámico según la altura del content
         let yOffset = tooltipHeight + marginTop;
+
         let wedgeOffset = 5
         let automaticImageIndex = 0
         let automaticImageScrollTime = Date.now();
@@ -230,10 +236,23 @@ $(document).ready(function(){
 
         function handleIn(e){
             const id = $(this).data("id");
+            const contentH = $(this).data("h");
 
             // Existe?
             if(data[id] != undefined){
+                // Miramos si el contenido encaja en 320x240 o es menor en altura
+                if(contentH != undefined){
+                    tooltipHeight = tooltipH180
+                    tooltip.css("height", "213px")
+                    tooltipImageContainer.css("height", "180px")
+                }else{
+                    tooltipHeight = defaultTooltipH
+                    tooltip.css("height", "273px")
+                    tooltipImageContainer.css("height", "240px")
+                }
+
                 showTooltip()
+
                 const {url, total, label, type} = data[id]
                 let imageElements = ""
                 let imageList = []
@@ -295,9 +314,7 @@ $(document).ready(function(){
                 window.scrollX
 
                 setOffsetY(link_rect.y)
-                
             }
-
         }
 
         function handleOut(e){
@@ -306,13 +323,9 @@ $(document).ready(function(){
         }
 
         function handleMouseMove(e){
-            //tooltip.css("top",(e.pageY - yOffset) + "px")
-            //tooltip.css("left",(e.pageX + xOffset) + "px");
-
             setOffsetX(e.pageX)
 
             tooltipXDest = (e.pageX + xOffset)
-
             tooltipYDest = (e.pageY - yOffset)
         }
         

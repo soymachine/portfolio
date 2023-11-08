@@ -121,6 +121,7 @@ p {
 
 a {
     color:inherit;
+    transition:all .25s linear;
 }
 
 a:hover {
