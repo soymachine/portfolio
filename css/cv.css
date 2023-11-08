@@ -145,6 +145,7 @@ p:not(:last-of-type) {
     ". intro ." auto 
     ". expertise ." auto 
     ". content ." auto 
+    ". cta ." auto 
     / 1fr minmax(600px, 900px) 1fr;
     margin-top:50px;
     overflow-x: hidden;
@@ -249,6 +250,10 @@ p:not(:last-of-type) {
     margin-top: 1.5rem;
 }
 
+.title-soft {
+    color: rgb(57, 222, 153);  
+}
+
 .expertise-list {
     margin:0 0 40px 0;
     padding:0;
@@ -278,6 +283,8 @@ p:not(:last-of-type) {
     
 }
 
+
+
 .expertise-score{
     height: 7px;
     background: rgba(37, 203, 134, 1);
@@ -287,6 +294,10 @@ p:not(:last-of-type) {
     border-radius: 5px;
     width: 0px;
     transition: all 1s ease-out;
+}
+
+.expertise-list-softskills .expertise-score {
+    background: rgb(59, 250, 171);
 }
 
 .score-90 {
@@ -366,8 +377,7 @@ p:not(:last-of-type) {
     font-size: var(--fs-500);
     font-family: var(--ff-sans-normal);
     margin-top: 20px;
-    border-bottom: 1px solid rgba(17, 86, 58, 0.5);
-    padding-bottom: 35px;
+    
     margin-bottom: 10px;
 }
 .clients > span{
@@ -401,6 +411,9 @@ p:not(:last-of-type) {
 .rol-description {
     font-family: var(--ff-sans-normal);
     font-size: var(--fs-400);
+    margin-top: 35px;
+    padding-top: 5px;
+    border-top: 1px solid rgba(17, 86, 58, 0.5);
 }
 
 .tooltip {
@@ -453,7 +466,7 @@ p:not(:last-of-type) {
     margin-left: 50px;
    
 }
-.game-release {
+.date-release {
     position: relative;
     left: -70px;
     top: -2px;
@@ -485,6 +498,10 @@ p:not(:last-of-type) {
     height: 180px;
 }
 
+.time-span-130 {
+    height: 180px;
+}
+
 .game-list > li:after {
     background-color: #0fa968;
     border: 2px solid #0fa968;
@@ -505,6 +522,43 @@ p:not(:last-of-type) {
     top: -31px;
 }
 
+.game-list > li > ul > li {
+    list-style: none;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.game-list > li > ul > li:after {
+    background-color: #ffffff;
+    border: 1px solid #0fa968;
+    border-radius: 50%;
+    box-sizing: border-box;
+    content: "";
+    display: inline-block;
+    flex-shrink: 0;
+    height: 9px;
+    left: -20px;
+    position: absolute;
+    top: 16px;
+    width: 9px;
+}
+
+
+.cta-section {
+    grid-area: cta;
+    text-align: center;
+    margin:50px 0 50px 0;
+    font-family: var(--ff-sans-normal);
+}
+
+.cta-section h1 {
+    font-weight: bold;
+}
+
+.cta-section p {
+    font-size: var(--fs-500);
+}
+
 
 @media (max-width: 1065px) {
     .home {
@@ -512,6 +566,7 @@ p:not(:last-of-type) {
         ". intro ." auto 
         ". expertise ." auto 
         ". content ." auto 
+        ". cta ." auto 
         / 1fr minmax(500px, 700px) 1fr;
         margin-top:20px;
     }
@@ -547,6 +602,7 @@ p:not(:last-of-type) {
         ". intro ." auto 
         ". expertise ." auto 
         ". content ." auto 
+        ". cta ." auto 
         / 1fr minmax(300px, 600px) 1fr;
         margin-top:20px;
     }
@@ -578,6 +634,7 @@ p:not(:last-of-type) {
         ". intro ." auto 
         ". expertise ." auto 
         ". content ." auto 
+        ". cta ." auto 
         / 1fr minmax(300px, 420px) 1fr;
         margin-top:20px;
     }
@@ -595,6 +652,7 @@ p:not(:last-of-type) {
         ". intro ." auto 
         ". expertise ." auto 
         ". content ." auto 
+        ". cta ." auto 
         / 1fr minmax(300px, 320px) 1fr;
         margin-top:20px;
     }

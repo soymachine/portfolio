@@ -69,10 +69,10 @@ $(document).ready(function(){
                 url: "/assets/imgs/portfolio-synapse-cms"
             },
             "synapse-cube-front": {
-                total:1,
+                total:5,
                 type:"png",
                 label:"Visit website",
-                url: "/assets/imgs/portfolio-synapsecube-front"
+                url: "/assets/imgs/datacube"
             },
             "synapse-cube-back": {
                 total:1,
@@ -187,6 +187,24 @@ $(document).ready(function(){
                 type:"png",
                 label:"Visit Behance gallery",
                 url: "/assets/imgs/coloremipsum"
+            },
+            "memory": {
+                total:5,
+                type:"png",
+                label:"Visit Website",
+                url: "/assets/imgs/memory"
+            },
+            "find-four": {
+                total:5,
+                type:"png",
+                label:"Visit Website",
+                url: "/assets/imgs/find-four"
+            },
+            "rviewer": {
+                total:1,
+                type:"png",
+                label:"Visit Website",
+                url: "/assets/imgs/rviewer"
             },
             
         }
