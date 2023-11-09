@@ -449,7 +449,7 @@ $(document).ready(function(){
           // If the element is visible
           if (entry.isIntersecting) {
             // Add the animation class
-            console.log(entry.target.dataset.id)
+            
             if(    entry.target.dataset.id == 75 
                 || entry.target.dataset.id == 80
                 || entry.target.dataset.id == 85
