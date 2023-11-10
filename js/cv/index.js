@@ -227,7 +227,7 @@ $(document).ready(function(){
 
 
         function showTooltip(){
-            tooltip.css("display", "block")
+            tooltip.css("display", "grid")
         }
 
         function hideTooltip(){
@@ -407,11 +407,32 @@ $(document).ready(function(){
                 yOffset = -40;
                 tooltipWedge.css("top","-8px")
                 tooltipWedge.css("transform","rotate(180deg)")
+
+                // 
+                tooltip.css("grid-template-areas", '"description" "image"')
+                tooltipDescription.css("margin-bottom", '5px')
+                tooltipDescription.css("margin-top", '7px')
+                
+                tooltipImageContainer.css("border-top-left-radius", '0px')
+                tooltipImageContainer.css("border-top-right-radius", '0px')
+                tooltipImageContainer.css("border-bottom-left-radius", '10px')
+                tooltipImageContainer.css("border-bottom-right-radius", '10px')
+                
             }else{
                 
                 yOffset = tooltipHeight + marginTop;
                 tooltipWedge.css("top",`${tooltipHeight - wedgeOffset}px`)
                 tooltipWedge.css("transform","rotate(0deg)")
+
+                tooltip.css("grid-template-areas", '"image" "description"')
+                tooltipDescription.css("margin-bottom", '7px')
+                tooltipDescription.css("margin-top", '5px')
+
+                tooltipImageContainer.css("border-top-left-radius", '10px')
+                tooltipImageContainer.css("border-top-right-radius", '10px')
+                tooltipImageContainer.css("border-bottom-left-radius", '0px')
+                tooltipImageContainer.css("border-bottom-right-radius", '0px')
+                
             }
         }
 
