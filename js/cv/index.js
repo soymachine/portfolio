@@ -476,6 +476,7 @@ $(document).ready(function(){
                 || entry.target.dataset.id == 85
                 || entry.target.dataset.id == 90
                 || entry.target.dataset.id == 95
+                || entry.target.dataset.id == 100
             ){
                 entry.target.classList.add(`score-${entry.target.dataset.id}`);
             }

@@ -144,8 +144,8 @@ p:not(:last-of-type) {
     align-content: center;
     grid-template: 
     ". intro ." auto 
-    ". expertise ." auto 
     ". content ." auto 
+    ". expertise ." auto 
     ". cta ." auto 
     / 1fr minmax(600px, 900px) 1fr;
     margin-top:50px;
@@ -249,10 +249,15 @@ p:not(:last-of-type) {
     font-size: var(--fs-700);
     font-weight: 500;
     margin-top: 1.5rem;
+    color:rgba(37, 203, 134, 1);
 }
 
 .title-soft {
     color: rgb(57, 222, 153);  
+}
+
+.title-languages {
+    color: inherit;  
 }
 
 .expertise-list {
@@ -284,8 +289,6 @@ p:not(:last-of-type) {
     
 }
 
-
-
 .expertise-score{
     height: 7px;
     background: rgba(37, 203, 134, 1);
@@ -301,12 +304,8 @@ p:not(:last-of-type) {
     background: rgb(59, 250, 171);
 }
 
-.score-90 {
-    width: 90%;
-}
-
-.score-95 {
-    width: 95%;
+.expertise-list-languages .expertise-score {
+    background: rgb(17, 86, 58);
 }
 
 .score-75 {
@@ -315,6 +314,22 @@ p:not(:last-of-type) {
 
 .score-80 {
     width: 80%;
+}
+
+.score-85 {
+    width: 85%;
+}
+
+.score-90 {
+    width: 90%;
+}
+
+.score-95 {
+    width: 95%;
+}
+
+.score-100 {
+    width: 100%;
 }
 
 .history-item {
